@@ -17,8 +17,8 @@ namespace GradeBook
                 res += number;
             }
 
-            System.Console.WriteLine(res);
-            System.Console.WriteLine(res/grades.Capacity);
+            res /= grades.Count;
+            System.Console.WriteLine($"The average grade is {res:N1}");
             
             Console.WriteLine("Hello World!");
         }
