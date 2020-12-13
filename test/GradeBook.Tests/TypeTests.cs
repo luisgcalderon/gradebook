@@ -104,6 +104,12 @@ namespace GradeBook.Tests
             Assert.True(Object.ReferenceEquals(book1, book2));
 
         }
+        [Fact]
+        public void AddGradeTest()
+        {
+            Book book = GetBook("Luis");
+            book.AddGrade(-60);
+        }
         Book GetBook(string name)
         {
             return new Book(name);
