@@ -22,6 +22,7 @@ namespace GradeBook
             result.Average = 0.0;
             result.High = double.MinValue;
             result.Low = double.MaxValue;
+            
             foreach(double grade in grades)
             {
                 result.Low = Math.Min(grade, result.Low);
