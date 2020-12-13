@@ -1,3 +1,4 @@
+
 namespace GradeBook
 {
     public class Statistics
@@ -5,5 +6,6 @@ namespace GradeBook
         public double Average;
         public double High;
         public double Low;
+        public char Letter;
     }
 }

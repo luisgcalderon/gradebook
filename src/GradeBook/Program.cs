@@ -8,15 +8,16 @@ namespace GradeBook
         static void Main(string[] args)
         {
             Book book = new Book("Luis' Grade Book");
-            book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(77.5);
-            Statistics result = book.GetStatistics();
+            // Loop
+            book.AddGrades();
+
+            Statistics stats = book.GetStatistics();
             
-            Console.WriteLine($"The lowest grade is {result.Low:N1}");
-            Console.WriteLine($"The highest grade is {result.High:N1}");
-            Console.WriteLine($"The average grade is {result.Average:N1}");
-            
+            Console.WriteLine($"The lowest grade is {stats.Low:N1}");
+            Console.WriteLine($"The highest grade is {stats.High:N1}");
+            Console.WriteLine($"The average grade is {stats.Average:N1}");
+            Console.WriteLine($"The letter grade is {stats.Letter}");
+
         }
     }
 }
