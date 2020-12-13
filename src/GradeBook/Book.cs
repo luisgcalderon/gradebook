@@ -41,7 +41,7 @@ namespace GradeBook
             }
             else
             {
-                Console.WriteLine("Invalid value");
+                throw new ArgumentException($"Invalid {nameof(grade)}");
             }
 
         }
@@ -58,9 +58,21 @@ namespace GradeBook
                 }
                 else
                 {
-                    double grade = double.Parse(input);
-                    AddGrade(grade);
-                    index++;
+                    try
+                    {
+                        double grade = double.Parse(input);
+                        AddGrade(grade);
+                        index++;
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("Add a valid grade");
+                    }
+                    catch (ArgumentException)
+                    {
+                        Console.WriteLine("Add a valid grade");
+                    }
                 }
             } while (true);
         }
@@ -100,6 +112,7 @@ namespace GradeBook
 
 
             }
+            result.Count = grades.Count;
             return result;
 
         }
